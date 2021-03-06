@@ -26,7 +26,7 @@ class Interactions extends Component {
       this.setState({
         gotchiContract: gotchiContract
       })
-      console.log(gotchiContract)
+      // console.log(gotchiContract)
     }
   }
 
@@ -39,7 +39,7 @@ class Interactions extends Component {
       console.log(tokenIds)
       let encodedData = this.state.gotchiContract.methods.interact(tokenIds).encodeABI()
 
-      console.log(encodedData)
+      // console.log(encodedData)
   
       const transactionParameters = {
         // nonce: '0x00', // ignored by MetaMask
@@ -86,7 +86,7 @@ class Interactions extends Component {
               </div>
               <section className="nes-container with-title">
                 <h3 className="title">Gotchi Interactions</h3>
-                <textarea className="nes-textarea" value={this.state.tokenIds} onChange={this.handleTokenIdsChange}/>
+                <textarea placeholder="Token IDs separated by space. E.g 100 1000" className="nes-textarea" value={this.state.tokenIds} onChange={this.handleTokenIdsChange}/>
                 <button type="button" className="nes-btn is-primary" onClick={this.petGotchi}>Pet Gotchis</button>
               </section>
           </div>

@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import '../node_modules/nes.css/css/nes.min.css'
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import GotchiList from './app/GotchiList'
+import Interactions from './app/Interactions'
+import Navigation from './app/Navigation'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="columns">
+        <div className="column">
+            <Navigation/>
+        </div>
+        <div className="column is-four-fifths">
+          <Route exact path="/" component={GotchiList}></Route>
+          <Route exact path="/interactions" component={Interactions}></Route>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

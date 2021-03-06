@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader';
+
+
+WebFont.load({
+  google: {
+    families: ['DotGothic16', 'Press Start 2P', 'sans-serif']
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
